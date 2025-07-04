@@ -2,41 +2,90 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from typing import Tuple, Optional
-from utils.processamento import calcular_vendas_agrupadas, adicionar_nomes_produtos, carregar_df_vendas, carregar_df_cadastro
+from utils.processamento import (
+    calcular_vendas_agrupadas,
+    adicionar_nomes_produtos,
+    carregar_df_vendas,
+    carregar_df_cadastro
+)
 from utils.moeda import formatar_moeda_brasileira
 from utils.sessao import inicializar_app, validar_df
 
-inicializar_app()
-
-@st.cache_data
-def preparar_produtos(df_vendas: pd.DataFrame, df_cadastro: pd.DataFrame) -> pd.DataFrame:
-    """
-    Calcula e formata DataFrame de produtos vendidos.
-    Retorna DataFrame com colunas: Produto, Quantidade, TotalItem (float), TotalFormatado
-    """
-    # Agrega e junta nomes
-    df = calcular_vendas_agrupadas(df_vendas)
-    df = adicionar_nomes_produtos(df, df_cadastro)
-    # Renomeia e ordena
-    df = df.rename(columns={"ProNom": "Produto"})
-    df = df.sort_values(by="TotalItem", ascending=False)
-    # Formatação
-    df["TotalFormatado"] = df["TotalItem"].map(formatar_moeda_brasileira)
-    return df
-
-# -------- Interface de Streamlit --------
-
+# ---------------- CONFIGURAÇÃO INICIAL ----------------
 st.set_page_config(page_title="Produtos Vendidos", layout="wide")
+inicializar_app()
 st.title("📦 Produtos Vendidos")
 
+# ---------------- CARREGAMENTO DOS DADOS ----------------
 df_vendas = validar_df("df_vendas", carregar_df_vendas)
 df_cadastro = validar_df("df_cadastro", carregar_df_cadastro)
 
-# Preparar produtos vendidos
+# ---------------- FUNÇÕES AUXILIARES ----------------
 
+@st.cache_data
+def preparar_produtos(df_vendas: pd.DataFrame, df_cadastro: pd.DataFrame) -> pd.DataFrame:
+    df = calcular_vendas_agrupadas(df_vendas)
+    df = adicionar_nomes_produtos(df, df_cadastro)
+    df = df.rename(columns={"ProNom": "Produto"})
+    df = df.sort_values(by="TotalItem", ascending=False)
+    df["TotalFormatado"] = df["TotalItem"].map(formatar_moeda_brasileira)
+    return df
+
+@st.cache_data
+def detalhar_giro_vendas(df_vendas: pd.DataFrame, df_cadastro: pd.DataFrame, periodo: str) -> pd.DataFrame:
+    df = df_vendas.copy()
+
+    # Remover ProNom duplicado da tabela de vendas (evita conflito no merge)
+    if "ProNom" in df.columns:
+        df = df.drop(columns=["ProNom"])
+
+    # Merge com nome do produto
+    df = df.merge(df_cadastro[["ProCod", "ProNom"]], how="left", on="ProCod")
+    df = df.rename(columns={"ProNom": "Produto"})
+
+    # Verificações
+    if "Produto" not in df.columns or df["Produto"].isna().all():
+        st.error("❌ Coluna 'Produto' não existe ou está totalmente vazia após o merge.")
+        st.stop()
+
+    if "Quantidade" not in df.columns:
+        st.error("❌ Coluna 'Quantidade' não encontrada no DataFrame de vendas.")
+        st.stop()
+
+    if "Data" not in df.columns:
+        st.error("❌ Coluna 'Data' não encontrada no DataFrame de vendas.")
+        st.stop()
+
+    # Datas
+    df["Data"] = pd.to_datetime(df["Data"], errors="coerce")
+    df = df.dropna(subset=["Data"])
+
+    # Criar coluna de período
+    if periodo == "Ano":
+        df["Periodo"] = df["Data"].dt.year
+    elif periodo == "Semestre":
+        df["Periodo"] = df["Data"].dt.year.astype(str) + " - S" + ((df["Data"].dt.month - 1) // 6 + 1).astype(str)
+    elif periodo == "Trimestre":
+        df["Periodo"] = df["Data"].dt.year.astype(str) + " - T" + ((df["Data"].dt.month - 1) // 3 + 1).astype(str)
+    elif periodo == "Mês":
+        df["Periodo"] = df["Data"].dt.to_period("M").astype(str)
+    elif periodo == "Semana":
+        df["Periodo"] = df["Data"].dt.strftime("%Y - Semana %U")
+    elif periodo == "Dia da Semana":
+        df["Periodo"] = df["Data"].dt.day_name()
+    elif periodo == "Data":
+        df["Periodo"] = df["Data"].dt.date
+    else:
+        st.error("❌ Período inválido selecionado.")
+        st.stop()
+
+    # Agrupamento
+    df_grouped = df.groupby(["Periodo", "Produto"]).agg(Quantidade=("Quantidade", "sum")).reset_index()
+
+    return df_grouped
+
+# ---------------- TABELA GERAL ----------------
 df_produtos = preparar_produtos(df_vendas, df_cadastro)
-
-# Exibição da tabela completa
 
 st.markdown("### 📝 Lista de Produtos Vendidos")
 st.dataframe(
@@ -45,12 +94,9 @@ st.dataframe(
     use_container_width=True
 )
 
-# Selecionar Top N
-
+# ---------------- TOP N ----------------
 top_n = st.slider("Número de produtos no Top", min_value=5, max_value=100, value=10)
 top_df = df_produtos.head(top_n)
-
-# Gráfico Top N produtos
 
 st.markdown(f"### 📊 Top {top_n} Produtos por Valor Vendido")
 bar_chart = (
@@ -68,5 +114,37 @@ bar_chart = (
     )
     .properties(height=400)
 )
-
 st.altair_chart(bar_chart, use_container_width=True)
+
+# ---------------- GIRO DE VENDAS ----------------
+st.markdown("### 🔄 Giro de Venda por Período")
+
+opcoes_periodo = [
+    "Ano", "Semestre", "Trimestre", "Mês", "Semana", "Dia da Semana", "Data"
+]
+periodo_selecionado = st.selectbox("Selecionar período de detalhamento:", opcoes_periodo)
+
+df_giro = detalhar_giro_vendas(df_vendas, df_cadastro, periodo_selecionado)
+
+st.dataframe(
+    df_giro.rename(columns={
+        "Periodo": "Período",
+        "Produto": "Produto",
+        "Quantidade": "Qtd Vendida"
+    }),
+    use_container_width=True
+)
+
+grafico_giro = (
+    alt.Chart(df_giro)
+    .mark_bar()
+    .encode(
+        x=alt.X("Quantidade:Q", title="Qtd Vendida"),
+        y=alt.Y("Produto:N", sort="-x"),
+        color=alt.Color("Periodo:N", legend=alt.Legend(title="Período")),
+        tooltip=["Periodo", "Produto", "Quantidade"]
+    )
+    .properties(height=500)
+)
+
+st.altair_chart(grafico_giro, use_container_width=True)
