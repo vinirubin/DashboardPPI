@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="921.6pt" height="518.4pt" viewBox="0 0 921.6 518.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T23:22:05.944375</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.6, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 518.4 
+L 921.6 518.4 
+L 921.6 0 
+L 0 0 
+z
+" style="fill: #10151f"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 251.55958 149.165319 
+C 236.017389 152.896673 221.322347 159.540424 208.254218 168.744047 
+C 195.186088 177.947669 183.980145 189.545441 175.230905 202.922044 
+C 166.481665 216.29865 160.346685 231.213253 157.151486 246.874459 
+C 153.956287 262.535666 153.758379 278.661495 156.568278 294.396398 
+C 159.378178 310.131302 165.145289 325.19198 173.563619 338.77927 
+C 181.981949 352.36656 192.899918 364.235862 205.738248 373.757413 
+C 218.576581 383.278963 233.10412 390.281332 248.550061 394.392979 
+C 263.996001 398.504625 280.08224 399.651537 295.955274 397.772832 
+C 311.828309 395.894135 327.202346 391.023658 341.261665 383.419828 
+C 355.320984 375.815999 367.812449 365.615717 378.073295 353.360196 
+C 388.334141 341.104675 396.179614 327.014566 401.193444 311.837472 
+C 406.207275 296.660378 408.299208 280.669528 407.358219 264.713423 
+C 406.417231 248.757318 402.460292 233.12325 395.697336 218.640668 
+C 388.93438 204.158085 379.487152 191.087762 367.856947 180.123222 
+C 356.226741 169.158682 342.622977 160.497343 327.767373 154.598715 
+C 312.911769 148.700087 297.071821 145.6704 281.087994 145.6704 
+L 281.087996 174.763008 
+C 293.395542 174.763008 305.592302 177.095867 317.031117 181.637811 
+C 328.469932 186.179754 338.94483 192.848985 347.900089 201.291681 
+C 356.855347 209.734377 364.129712 219.798526 369.337189 230.950114 
+C 374.544665 242.101703 377.591508 254.139935 378.316069 266.426135 
+C 379.04063 278.712336 377.429842 291.025291 373.569192 302.711653 
+C 369.708543 314.398016 363.667528 325.2474 355.766677 334.684151 
+C 347.865826 344.120902 338.247397 351.975119 327.421722 357.830068 
+C 316.596047 363.685016 304.758038 367.435284 292.535801 368.881881 
+C 280.313565 370.328483 267.927161 369.445362 256.033787 366.279393 
+C 244.140413 363.113425 232.954207 357.721601 223.068691 350.390008 
+C 213.183177 343.058414 204.776341 333.919051 198.294227 323.456838 
+C 191.812113 312.994625 187.371437 301.397902 185.207814 289.282026 
+C 183.044192 277.166151 183.196581 264.749263 185.656884 252.690134 
+C 188.117188 240.631005 192.841122 229.14676 199.578037 218.846774 
+C 206.314952 208.54679 214.943528 199.616505 225.005987 192.529716 
+C 235.068447 185.442926 246.383629 180.327238 258.351117 177.454096 
+z
+" style="fill: #60a5fa; stroke: #10151f; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 281.088002 145.6704 
+C 276.119329 145.6704 271.15497 145.963161 266.220737 146.547168 
+C 261.286505 147.131175 256.390969 148.005402 251.55958 149.165319 
+L 258.351117 177.454096 
+C 262.071286 176.56096 265.840849 175.887805 269.640208 175.438119 
+C 273.439567 174.988434 277.262123 174.763008 281.088001 174.763008 
+z
+" style="fill: #334155; stroke: #10151f; stroke-width: 3; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 42px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #eef3fc" x="281.088" y="277.424895" transform="rotate(-0 281.088 277.424895)">80</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #9daec7" x="281.088" y="299.987712" transform="rotate(-0 281.088 299.987712)">clientes fictícios</text>
+   </g>
+  </g>
+  <g id="text_3">
+   <text style="font-weight: 700; font-size: 26px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #eef3fc" x="50.688" y="46.656" transform="rotate(-0 50.688 46.656)">Recorrência dos clientes</text>
+  </g>
+  <g id="text_4">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #9daec7" x="50.688" y="75.168" transform="rotate(-0 50.688 75.168)">Clientes que compram novamente · exemplo com identidades geradas</text>
+  </g>
+  <g id="text_5">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #2dd4bf" x="866.304" y="23.328" transform="rotate(-0 866.304 23.328)">DADOS SINTÉTICOS</text>
+  </g>
+  <g id="text_6">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #9daec7" x="50.688" y="495.072" transform="rotate(-0 50.688 495.072)">DashboardPPI  /  Material de apresentação</text>
+  </g>
+  <g id="text_7">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #9daec7" x="866.304" y="495.072" transform="rotate(-0 866.304 495.072)">Valores fictícios · sem dados comerciais</text>
+  </g>
+  <g id="text_8">
+   <text style="font-weight: 700; font-size: 44px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #60a5fa" x="552.96" y="186.624" transform="rotate(-0 552.96 186.624)">96,2%</text>
+  </g>
+  <g id="text_9">
+   <text style="font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #eef3fc" x="552.96" y="228.096" transform="rotate(-0 552.96 228.096)">Taxa de retorno</text>
+  </g>
+  <g id="text_10">
+   <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #eef3fc" x="552.96" y="295.488" transform="rotate(-0 552.96 295.488)">77 com mais de uma compra</text>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #9daec7" x="552.96" y="336.96" transform="rotate(-0 552.96 336.96)">3 com uma única compra</text>
+  </g>
+ </g>
+</svg>

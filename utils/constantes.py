@@ -8,5 +8,5 @@ DIAS_SEMANA_PT = {
     "Thursday": "quinta-feira",
     "Friday": "sexta-feira",
     "Saturday": "sábado",
-    "Sunday": "domingo"
+    "Sunday": "domingo",
 }

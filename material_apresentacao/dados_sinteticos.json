@@ -1,0 +1,1018 @@
+{
+  "proveniencia": "Dados 100% sintéticos gerados com semente fixa 731; nenhum CSV real lido.",
+  "ano_ficticio": 2025,
+  "clientes": 80,
+  "clientes_retornaram": 77,
+  "vendas": 451,
+  "valor_total": 89759.2,
+  "produtos_cadastrados": 20,
+  "produtos_vendidos": 12,
+  "mensal": [
+    {
+      "Mês": "2025-01",
+      "TotalVenda": 4884.0,
+      "QuantClientes": 20,
+      "QuantVendas": 23,
+      "MediaPorVenda": 212.34782608695653,
+      "MediaPorCliente": 244.2
+    },
+    {
+      "Mês": "2025-02",
+      "TotalVenda": 3996.1,
+      "QuantClientes": 22,
+      "QuantVendas": 28,
+      "MediaPorVenda": 142.71785714285713,
+      "MediaPorCliente": 181.64090909090908
+    },
+    {
+      "Mês": "2025-03",
+      "TotalVenda": 8509.1,
+      "QuantClientes": 27,
+      "QuantVendas": 34,
+      "MediaPorVenda": 250.26764705882354,
+      "MediaPorCliente": 315.15185185185186
+    },
+    {
+      "Mês": "2025-04",
+      "TotalVenda": 5091.9,
+      "QuantClientes": 25,
+      "QuantVendas": 32,
+      "MediaPorVenda": 159.121875,
+      "MediaPorCliente": 203.676
+    },
+    {
+      "Mês": "2025-05",
+      "TotalVenda": 6367.5,
+      "QuantClientes": 29,
+      "QuantVendas": 32,
+      "MediaPorVenda": 198.984375,
+      "MediaPorCliente": 219.56896551724137
+    },
+    {
+      "Mês": "2025-06",
+      "TotalVenda": 8747.3,
+      "QuantClientes": 30,
+      "QuantVendas": 40,
+      "MediaPorVenda": 218.68249999999998,
+      "MediaPorCliente": 291.57666666666665
+    },
+    {
+      "Mês": "2025-07",
+      "TotalVenda": 8212.2,
+      "QuantClientes": 33,
+      "QuantVendas": 38,
+      "MediaPorVenda": 216.11052631578949,
+      "MediaPorCliente": 248.85454545454547
+    },
+    {
+      "Mês": "2025-08",
+      "TotalVenda": 6988.4,
+      "QuantClientes": 31,
+      "QuantVendas": 42,
+      "MediaPorVenda": 166.3904761904762,
+      "MediaPorCliente": 225.4322580645161
+    },
+    {
+      "Mês": "2025-09",
+      "TotalVenda": 9264.4,
+      "QuantClientes": 33,
+      "QuantVendas": 47,
+      "MediaPorVenda": 197.11489361702127,
+      "MediaPorCliente": 280.73939393939395
+    },
+    {
+      "Mês": "2025-10",
+      "TotalVenda": 7642.4,
+      "QuantClientes": 31,
+      "QuantVendas": 44,
+      "MediaPorVenda": 173.6909090909091,
+      "MediaPorCliente": 246.52903225806452
+    },
+    {
+      "Mês": "2025-11",
+      "TotalVenda": 10981.9,
+      "QuantClientes": 36,
+      "QuantVendas": 47,
+      "MediaPorVenda": 233.65744680851063,
+      "MediaPorCliente": 305.05277777777775
+    },
+    {
+      "Mês": "2025-12",
+      "TotalVenda": 9074.0,
+      "QuantClientes": 33,
+      "QuantVendas": 44,
+      "MediaPorVenda": 206.22727272727272,
+      "MediaPorCliente": 274.969696969697
+    }
+  ],
+  "dias_semana": [
+    {
+      "DiaSemana": "segunda-feira",
+      "TotalVenda": 14075.2,
+      "QuantClientes": 53,
+      "QuantVendas": 74,
+      "MediaPorVenda": 190.20540540540543,
+      "MediaPorCliente": 265.56981132075475
+    },
+    {
+      "DiaSemana": "terça-feira",
+      "TotalVenda": 11577.3,
+      "QuantClientes": 38,
+      "QuantVendas": 58,
+      "MediaPorVenda": 199.60862068965517,
+      "MediaPorCliente": 304.6657894736842
+    },
+    {
+      "DiaSemana": "quarta-feira",
+      "TotalVenda": 13365.6,
+      "QuantClientes": 43,
+      "QuantVendas": 66,
+      "MediaPorVenda": 202.5090909090909,
+      "MediaPorCliente": 310.8279069767442
+    },
+    {
+      "DiaSemana": "quinta-feira",
+      "TotalVenda": 13605.1,
+      "QuantClientes": 45,
+      "QuantVendas": 61,
+      "MediaPorVenda": 223.0344262295082,
+      "MediaPorCliente": 302.3355555555556
+    },
+    {
+      "DiaSemana": "sexta-feira",
+      "TotalVenda": 12066.9,
+      "QuantClientes": 41,
+      "QuantVendas": 57,
+      "MediaPorVenda": 211.7,
+      "MediaPorCliente": 294.31463414634146
+    },
+    {
+      "DiaSemana": "sábado",
+      "TotalVenda": 13715.3,
+      "QuantClientes": 50,
+      "QuantVendas": 74,
+      "MediaPorVenda": 185.3418918918919,
+      "MediaPorCliente": 274.306
+    },
+    {
+      "DiaSemana": "domingo",
+      "TotalVenda": 11353.8,
+      "QuantClientes": 41,
+      "QuantVendas": 61,
+      "MediaPorVenda": 186.12786885245902,
+      "MediaPorCliente": 276.92195121951215
+    }
+  ],
+  "produtos": [
+    {
+      "ProCod": "PROD-DEMO-012",
+      "Quantidade": 359,
+      "TotalItem": 14324.1,
+      "Produto": "Produto L",
+      "TotalFormatado": "R$ 14.324,10",
+      "RotuloProduto": "Produto L [PROD-DEMO-012]"
+    },
+    {
+      "ProCod": "PROD-DEMO-007",
+      "Quantidade": 305,
+      "TotalItem": 13725.0,
+      "Produto": "Produto G",
+      "TotalFormatado": "R$ 13.725,00",
+      "RotuloProduto": "Produto G [PROD-DEMO-007]"
+    },
+    {
+      "ProCod": "PROD-DEMO-006",
+      "Quantidade": 347,
+      "TotalItem": 11277.5,
+      "Produto": "Produto F",
+      "TotalFormatado": "R$ 11.277,50",
+      "RotuloProduto": "Produto F [PROD-DEMO-006]"
+    },
+    {
+      "ProCod": "PROD-DEMO-011",
+      "Quantidade": 335,
+      "TotalItem": 9681.5,
+      "Produto": "Produto K",
+      "TotalFormatado": "R$ 9.681,50",
+      "RotuloProduto": "Produto K [PROD-DEMO-011]"
+    },
+    {
+      "ProCod": "PROD-DEMO-004",
+      "Quantidade": 361,
+      "TotalItem": 8988.9,
+      "Produto": "Produto D",
+      "TotalFormatado": "R$ 8.988,90",
+      "RotuloProduto": "Produto D [PROD-DEMO-004]"
+    },
+    {
+      "ProCod": "PROD-DEMO-010",
+      "Quantidade": 345,
+      "TotalItem": 7590.0,
+      "Produto": "Produto J",
+      "TotalFormatado": "R$ 7.590,00",
+      "RotuloProduto": "Produto J [PROD-DEMO-010]"
+    },
+    {
+      "ProCod": "PROD-DEMO-003",
+      "Quantidade": 369,
+      "TotalItem": 6826.5,
+      "Produto": "Produto C",
+      "TotalFormatado": "R$ 6.826,50",
+      "RotuloProduto": "Produto C [PROD-DEMO-003]"
+    },
+    {
+      "ProCod": "PROD-DEMO-009",
+      "Quantidade": 343,
+      "TotalItem": 5659.5,
+      "Produto": "Produto I",
+      "TotalFormatado": "R$ 5.659,50",
+      "RotuloProduto": "Produto I [PROD-DEMO-009]"
+    },
+    {
+      "ProCod": "PROD-DEMO-002",
+      "Quantidade": 278,
+      "TotalItem": 3586.2000000000003,
+      "Produto": "Produto B",
+      "TotalFormatado": "R$ 3.586,20",
+      "RotuloProduto": "Produto B [PROD-DEMO-002]"
+    },
+    {
+      "ProCod": "PROD-DEMO-005",
+      "Quantidade": 347,
+      "TotalItem": 3435.3,
+      "Produto": "Produto E",
+      "TotalFormatado": "R$ 3.435,30",
+      "RotuloProduto": "Produto E [PROD-DEMO-005]"
+    },
+    {
+      "ProCod": "PROD-DEMO-001",
+      "Quantidade": 311,
+      "TotalItem": 2332.5,
+      "Produto": "Produto A",
+      "TotalFormatado": "R$ 2.332,50",
+      "RotuloProduto": "Produto A [PROD-DEMO-001]"
+    },
+    {
+      "ProCod": "PROD-DEMO-008",
+      "Quantidade": 338,
+      "TotalItem": 2332.2000000000003,
+      "Produto": "Produto H",
+      "TotalFormatado": "R$ 2.332,20",
+      "RotuloProduto": "Produto H [PROD-DEMO-008]"
+    }
+  ],
+  "regioes": [
+    {
+      "Bairro": "Região C",
+      "Vendas": 95,
+      "ValorTotal": 17491.0,
+      "ValorTotalFormatado": "R$ 17.491,00"
+    },
+    {
+      "Bairro": "Região B",
+      "Vendas": 93,
+      "ValorTotal": 18175.2,
+      "ValorTotalFormatado": "R$ 18.175,20"
+    },
+    {
+      "Bairro": "Região E",
+      "Vendas": 92,
+      "ValorTotal": 19685.7,
+      "ValorTotalFormatado": "R$ 19.685,70"
+    },
+    {
+      "Bairro": "Região D",
+      "Vendas": 89,
+      "ValorTotal": 18669.7,
+      "ValorTotalFormatado": "R$ 18.669,70"
+    },
+    {
+      "Bairro": "Região A",
+      "Vendas": 82,
+      "ValorTotal": 15737.6,
+      "ValorTotalFormatado": "R$ 15.737,60"
+    }
+  ],
+  "perfil_clientes": [
+    {
+      "Cliente": "CLIENTE-DEMO-001",
+      "total_vendas": 1340.1000000000001,
+      "num_compras": 7,
+      "itens_totais": 21,
+      "unidades_totais": 60,
+      "ticket_medio": 191.44285714285715,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-002",
+      "total_vendas": 989.4,
+      "num_compras": 7,
+      "itens_totais": 18,
+      "unidades_totais": 47,
+      "ticket_medio": 141.34285714285713,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-003",
+      "total_vendas": 498.2,
+      "num_compras": 5,
+      "itens_totais": 11,
+      "unidades_totais": 36,
+      "ticket_medio": 99.64,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-004",
+      "total_vendas": 684.5,
+      "num_compras": 5,
+      "itens_totais": 13,
+      "unidades_totais": 33,
+      "ticket_medio": 136.9,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-005",
+      "total_vendas": 1717.7,
+      "num_compras": 6,
+      "itens_totais": 21,
+      "unidades_totais": 67,
+      "ticket_medio": 286.28333333333336,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-006",
+      "total_vendas": 741.2,
+      "num_compras": 5,
+      "itens_totais": 14,
+      "unidades_totais": 35,
+      "ticket_medio": 148.24,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-007",
+      "total_vendas": 427.0,
+      "num_compras": 2,
+      "itens_totais": 8,
+      "unidades_totais": 23,
+      "ticket_medio": 213.5,
+      "num_retornos": 1
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-008",
+      "total_vendas": 313.0,
+      "num_compras": 1,
+      "itens_totais": 2,
+      "unidades_totais": 9,
+      "ticket_medio": 313.0,
+      "num_retornos": 0
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-009",
+      "total_vendas": 1354.5,
+      "num_compras": 7,
+      "itens_totais": 22,
+      "unidades_totais": 62,
+      "ticket_medio": 193.5,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-010",
+      "total_vendas": 953.8,
+      "num_compras": 4,
+      "itens_totais": 14,
+      "unidades_totais": 41,
+      "ticket_medio": 238.45,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-011",
+      "total_vendas": 881.9,
+      "num_compras": 5,
+      "itens_totais": 16,
+      "unidades_totais": 51,
+      "ticket_medio": 176.38,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-012",
+      "total_vendas": 836.4,
+      "num_compras": 4,
+      "itens_totais": 15,
+      "unidades_totais": 47,
+      "ticket_medio": 209.1,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-013",
+      "total_vendas": 1102.0,
+      "num_compras": 6,
+      "itens_totais": 16,
+      "unidades_totais": 46,
+      "ticket_medio": 183.66666666666666,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-014",
+      "total_vendas": 1052.6,
+      "num_compras": 6,
+      "itens_totais": 13,
+      "unidades_totais": 47,
+      "ticket_medio": 175.4333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-015",
+      "total_vendas": 1298.7,
+      "num_compras": 5,
+      "itens_totais": 17,
+      "unidades_totais": 61,
+      "ticket_medio": 259.74,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-016",
+      "total_vendas": 1638.6,
+      "num_compras": 5,
+      "itens_totais": 22,
+      "unidades_totais": 64,
+      "ticket_medio": 327.71999999999997,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-017",
+      "total_vendas": 2682.7,
+      "num_compras": 14,
+      "itens_totais": 42,
+      "unidades_totais": 127,
+      "ticket_medio": 191.62142857142857,
+      "num_retornos": 13
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-018",
+      "total_vendas": 2750.2,
+      "num_compras": 9,
+      "itens_totais": 33,
+      "unidades_totais": 121,
+      "ticket_medio": 305.5777777777778,
+      "num_retornos": 8
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-019",
+      "total_vendas": 787.6,
+      "num_compras": 5,
+      "itens_totais": 9,
+      "unidades_totais": 30,
+      "ticket_medio": 157.52,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-020",
+      "total_vendas": 1359.0,
+      "num_compras": 5,
+      "itens_totais": 17,
+      "unidades_totais": 64,
+      "ticket_medio": 271.8,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-021",
+      "total_vendas": 330.0,
+      "num_compras": 3,
+      "itens_totais": 9,
+      "unidades_totais": 21,
+      "ticket_medio": 110.0,
+      "num_retornos": 2
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-022",
+      "total_vendas": 921.5999999999999,
+      "num_compras": 5,
+      "itens_totais": 17,
+      "unidades_totais": 44,
+      "ticket_medio": 184.32,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-023",
+      "total_vendas": 351.6,
+      "num_compras": 2,
+      "itens_totais": 6,
+      "unidades_totais": 17,
+      "ticket_medio": 175.8,
+      "num_retornos": 1
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-024",
+      "total_vendas": 864.1,
+      "num_compras": 4,
+      "itens_totais": 10,
+      "unidades_totais": 32,
+      "ticket_medio": 216.025,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-025",
+      "total_vendas": 1078.4,
+      "num_compras": 5,
+      "itens_totais": 11,
+      "unidades_totais": 37,
+      "ticket_medio": 215.68,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-026",
+      "total_vendas": 276.9,
+      "num_compras": 5,
+      "itens_totais": 7,
+      "unidades_totais": 16,
+      "ticket_medio": 55.379999999999995,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-027",
+      "total_vendas": 623.6,
+      "num_compras": 4,
+      "itens_totais": 10,
+      "unidades_totais": 30,
+      "ticket_medio": 155.9,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-028",
+      "total_vendas": 676.3,
+      "num_compras": 4,
+      "itens_totais": 12,
+      "unidades_totais": 33,
+      "ticket_medio": 169.075,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-029",
+      "total_vendas": 956.9,
+      "num_compras": 4,
+      "itens_totais": 13,
+      "unidades_totais": 39,
+      "ticket_medio": 239.225,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-030",
+      "total_vendas": 2276.3,
+      "num_compras": 11,
+      "itens_totais": 33,
+      "unidades_totais": 113,
+      "ticket_medio": 206.93636363636367,
+      "num_retornos": 10
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-031",
+      "total_vendas": 1102.5,
+      "num_compras": 4,
+      "itens_totais": 11,
+      "unidades_totais": 47,
+      "ticket_medio": 275.625,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-032",
+      "total_vendas": 878.8,
+      "num_compras": 3,
+      "itens_totais": 14,
+      "unidades_totais": 43,
+      "ticket_medio": 292.93333333333334,
+      "num_retornos": 2
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-033",
+      "total_vendas": 225.0,
+      "num_compras": 1,
+      "itens_totais": 1,
+      "unidades_totais": 5,
+      "ticket_medio": 225.0,
+      "num_retornos": 0
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-034",
+      "total_vendas": 1017.8,
+      "num_compras": 6,
+      "itens_totais": 19,
+      "unidades_totais": 47,
+      "ticket_medio": 169.63333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-035",
+      "total_vendas": 1094.2,
+      "num_compras": 7,
+      "itens_totais": 19,
+      "unidades_totais": 57,
+      "ticket_medio": 156.31428571428572,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-036",
+      "total_vendas": 1175.3,
+      "num_compras": 8,
+      "itens_totais": 21,
+      "unidades_totais": 57,
+      "ticket_medio": 146.9125,
+      "num_retornos": 7
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-037",
+      "total_vendas": 706.6,
+      "num_compras": 6,
+      "itens_totais": 17,
+      "unidades_totais": 36,
+      "ticket_medio": 117.76666666666667,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-038",
+      "total_vendas": 1530.6,
+      "num_compras": 9,
+      "itens_totais": 26,
+      "unidades_totais": 87,
+      "ticket_medio": 170.06666666666666,
+      "num_retornos": 8
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-039",
+      "total_vendas": 1850.8999999999999,
+      "num_compras": 7,
+      "itens_totais": 21,
+      "unidades_totais": 71,
+      "ticket_medio": 264.4142857142857,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-040",
+      "total_vendas": 2039.5,
+      "num_compras": 9,
+      "itens_totais": 30,
+      "unidades_totais": 92,
+      "ticket_medio": 226.61111111111111,
+      "num_retornos": 8
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-041",
+      "total_vendas": 1423.6999999999998,
+      "num_compras": 6,
+      "itens_totais": 18,
+      "unidades_totais": 56,
+      "ticket_medio": 237.2833333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-042",
+      "total_vendas": 497.0,
+      "num_compras": 5,
+      "itens_totais": 11,
+      "unidades_totais": 26,
+      "ticket_medio": 99.4,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-043",
+      "total_vendas": 1278.4,
+      "num_compras": 9,
+      "itens_totais": 25,
+      "unidades_totais": 61,
+      "ticket_medio": 142.04444444444445,
+      "num_retornos": 8
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-044",
+      "total_vendas": 572.3,
+      "num_compras": 5,
+      "itens_totais": 12,
+      "unidades_totais": 32,
+      "ticket_medio": 114.46,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-045",
+      "total_vendas": 2338.0,
+      "num_compras": 8,
+      "itens_totais": 28,
+      "unidades_totais": 98,
+      "ticket_medio": 292.25,
+      "num_retornos": 7
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-046",
+      "total_vendas": 980.5999999999999,
+      "num_compras": 3,
+      "itens_totais": 10,
+      "unidades_totais": 31,
+      "ticket_medio": 326.8666666666666,
+      "num_retornos": 2
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-047",
+      "total_vendas": 1639.1000000000001,
+      "num_compras": 7,
+      "itens_totais": 23,
+      "unidades_totais": 65,
+      "ticket_medio": 234.15714285714287,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-048",
+      "total_vendas": 1256.3,
+      "num_compras": 6,
+      "itens_totais": 16,
+      "unidades_totais": 50,
+      "ticket_medio": 209.38333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-049",
+      "total_vendas": 654.1,
+      "num_compras": 4,
+      "itens_totais": 13,
+      "unidades_totais": 32,
+      "ticket_medio": 163.525,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-050",
+      "total_vendas": 2140.6,
+      "num_compras": 8,
+      "itens_totais": 29,
+      "unidades_totais": 82,
+      "ticket_medio": 267.575,
+      "num_retornos": 7
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-051",
+      "total_vendas": 319.6,
+      "num_compras": 2,
+      "itens_totais": 6,
+      "unidades_totais": 16,
+      "ticket_medio": 159.8,
+      "num_retornos": 1
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-052",
+      "total_vendas": 906.6,
+      "num_compras": 6,
+      "itens_totais": 14,
+      "unidades_totais": 40,
+      "ticket_medio": 151.1,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-053",
+      "total_vendas": 1468.3,
+      "num_compras": 5,
+      "itens_totais": 16,
+      "unidades_totais": 55,
+      "ticket_medio": 293.65999999999997,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-054",
+      "total_vendas": 819.6,
+      "num_compras": 5,
+      "itens_totais": 15,
+      "unidades_totais": 37,
+      "ticket_medio": 163.92000000000002,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-055",
+      "total_vendas": 1196.3,
+      "num_compras": 5,
+      "itens_totais": 19,
+      "unidades_totais": 57,
+      "ticket_medio": 239.26,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-056",
+      "total_vendas": 2933.1,
+      "num_compras": 10,
+      "itens_totais": 35,
+      "unidades_totais": 122,
+      "ticket_medio": 293.31,
+      "num_retornos": 9
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-057",
+      "total_vendas": 1439.4,
+      "num_compras": 8,
+      "itens_totais": 21,
+      "unidades_totais": 66,
+      "ticket_medio": 179.925,
+      "num_retornos": 7
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-058",
+      "total_vendas": 707.0,
+      "num_compras": 6,
+      "itens_totais": 15,
+      "unidades_totais": 40,
+      "ticket_medio": 117.83333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-059",
+      "total_vendas": 1561.1000000000001,
+      "num_compras": 7,
+      "itens_totais": 22,
+      "unidades_totais": 60,
+      "ticket_medio": 223.01428571428573,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-060",
+      "total_vendas": 1182.2,
+      "num_compras": 6,
+      "itens_totais": 16,
+      "unidades_totais": 49,
+      "ticket_medio": 197.03333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-061",
+      "total_vendas": 725.5999999999999,
+      "num_compras": 5,
+      "itens_totais": 10,
+      "unidades_totais": 30,
+      "ticket_medio": 145.11999999999998,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-062",
+      "total_vendas": 1089.4,
+      "num_compras": 6,
+      "itens_totais": 17,
+      "unidades_totais": 50,
+      "ticket_medio": 181.5666666666667,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-063",
+      "total_vendas": 1026.8,
+      "num_compras": 7,
+      "itens_totais": 21,
+      "unidades_totais": 57,
+      "ticket_medio": 146.68571428571428,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-064",
+      "total_vendas": 1369.3999999999999,
+      "num_compras": 5,
+      "itens_totais": 21,
+      "unidades_totais": 56,
+      "ticket_medio": 273.88,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-065",
+      "total_vendas": 932.7,
+      "num_compras": 7,
+      "itens_totais": 19,
+      "unidades_totais": 46,
+      "ticket_medio": 133.24285714285716,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-066",
+      "total_vendas": 1379.6,
+      "num_compras": 5,
+      "itens_totais": 16,
+      "unidades_totais": 55,
+      "ticket_medio": 275.91999999999996,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-067",
+      "total_vendas": 1210.5,
+      "num_compras": 6,
+      "itens_totais": 22,
+      "unidades_totais": 56,
+      "ticket_medio": 201.75,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-068",
+      "total_vendas": 1213.3000000000002,
+      "num_compras": 6,
+      "itens_totais": 18,
+      "unidades_totais": 58,
+      "ticket_medio": 202.2166666666667,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-069",
+      "total_vendas": 685.0,
+      "num_compras": 5,
+      "itens_totais": 11,
+      "unidades_totais": 30,
+      "ticket_medio": 137.0,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-070",
+      "total_vendas": 825.4,
+      "num_compras": 4,
+      "itens_totais": 12,
+      "unidades_totais": 40,
+      "ticket_medio": 206.35,
+      "num_retornos": 3
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-071",
+      "total_vendas": 1469.1,
+      "num_compras": 7,
+      "itens_totais": 24,
+      "unidades_totais": 75,
+      "ticket_medio": 209.87142857142857,
+      "num_retornos": 6
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-072",
+      "total_vendas": 86.1,
+      "num_compras": 1,
+      "itens_totais": 3,
+      "unidades_totais": 5,
+      "ticket_medio": 86.1,
+      "num_retornos": 0
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-073",
+      "total_vendas": 396.29999999999995,
+      "num_compras": 3,
+      "itens_totais": 5,
+      "unidades_totais": 16,
+      "ticket_medio": 132.1,
+      "num_retornos": 2
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-074",
+      "total_vendas": 696.7,
+      "num_compras": 5,
+      "itens_totais": 12,
+      "unidades_totais": 40,
+      "ticket_medio": 139.34,
+      "num_retornos": 4
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-075",
+      "total_vendas": 1044.3,
+      "num_compras": 6,
+      "itens_totais": 12,
+      "unidades_totais": 42,
+      "ticket_medio": 174.04999999999998,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-076",
+      "total_vendas": 1223.0,
+      "num_compras": 3,
+      "itens_totais": 15,
+      "unidades_totais": 41,
+      "ticket_medio": 407.6666666666667,
+      "num_retornos": 2
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-077",
+      "total_vendas": 2547.1,
+      "num_compras": 14,
+      "itens_totais": 46,
+      "unidades_totais": 130,
+      "ticket_medio": 181.93571428571428,
+      "num_retornos": 13
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-078",
+      "total_vendas": 999.1999999999999,
+      "num_compras": 6,
+      "itens_totais": 17,
+      "unidades_totais": 49,
+      "ticket_medio": 166.53333333333333,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-079",
+      "total_vendas": 1436.5,
+      "num_compras": 6,
+      "itens_totais": 21,
+      "unidades_totais": 66,
+      "ticket_medio": 239.41666666666666,
+      "num_retornos": 5
+    },
+    {
+      "Cliente": "CLIENTE-DEMO-080",
+      "total_vendas": 703.9,
+      "num_compras": 3,
+      "itens_totais": 11,
+      "unidades_totais": 26,
+      "ticket_medio": 234.63333333333333,
+      "num_retornos": 2
+    }
+  ]
+}

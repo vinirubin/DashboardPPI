@@ -1,109 +1,66 @@
-import streamlit as st
-import pandas as pd
 import altair as alt
-from typing import Tuple
-from utils.moeda import formatar_moeda_brasileira
-from utils.processamento import carregar_df_cadastro, processa_df_venda_agrupado
-from utils.sessao import inicializar_app, validar_df
+import streamlit as st
 
-# ---------------- CONFIGURAÇÃO INICIAL ----------------
+from utils.analise import calcular_metricas_clientes, dividir_seguro, filtrar_clientes_identificados
+from utils.cache import cache_calculo
+from utils.moeda import formatar_moeda_brasileira
+from utils.processamento import processa_df_venda_agrupado
+from utils.sessao import inicializar_app, validar_df
+from utils.visualizacao import mostrar_paginado
+
 st.set_page_config(page_title="Dados dos Clientes", layout="wide")
 inicializar_app()
 st.title("👥 Análise de Clientes")
+df = validar_df("df_vendas_agrupado", processa_df_venda_agrupado)
 
-# ---------------- FUNÇÕES AUXILIARES ----------------
+if st.checkbox("Ignorar cliente 99999", value=True):
+    df = filtrar_clientes_identificados(df)
+if df.empty:
+    st.info("Nenhum cliente corresponde ao filtro atual.")
 
-@st.cache_data
-def calcular_metricas_clientes(df_vendas_agrupado: pd.DataFrame) -> Tuple[int, int, pd.DataFrame]:
-    """
-    Calcula estatísticas relacionadas aos clientes:
-    - Total de clientes
-    - Quantos retornaram (mais de uma compra)
-    - DataFrame com métricas por cliente
-    """
-    df = df_vendas_agrupado.copy()
-
-    df_group = df.groupby("Cliente").agg(
-        total_vendas=("TotalVenda", "sum"),
-        num_compras=("Data", "count"),
-        itens_totais=("QuantidadeItens", "sum")
-    ).reset_index()
-
-    df_group["ticket_medio"] = df_group["total_vendas"] / df_group["num_compras"]
-
-    total_customers = df_group.shape[0]
-    returning_customers = df_group[df_group["num_compras"] > 1].shape[0]
-
-    return total_customers, returning_customers, df_group
-
-# ---------------- CARREGAMENTO DE DADOS ----------------
-
-df_vendas_agrupado = validar_df("df_vendas_agrupado", processa_df_venda_agrupado)
-df_cadastro = validar_df("df_cadastro", carregar_df_cadastro)
-
-# ---------------- FILTRO DE CLIENTES ----------------
-
-ignorar_99999 = st.checkbox("Ignorar cliente 99999", value=True)
-if ignorar_99999:
-    df_vendas_agrupado = df_vendas_agrupado[df_vendas_agrupado["Cliente"] != 99999]
-
-# ---------------- CÁLCULO DE MÉTRICAS ----------------
-
-total_customers, returning_customers, df_clientes = calcular_metricas_clientes(df_vendas_agrupado)
-return_rate = (returning_customers / total_customers * 100) if total_customers else 0
-
-# ---------------- EXIBIÇÃO DE KPIs ----------------
-
+metricas_em_cache = cache_calculo(calcular_metricas_clientes)
+total, retornaram, df_clientes = metricas_em_cache(df)
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Clientes", total_customers)
-col2.metric("Clientes Retornaram", returning_customers)
-col3.metric("Taxa de Retorno", f"{return_rate:.1f}%")
-col4.metric("Compras Totais", df_vendas_agrupado.shape[0])
-
-st.markdown("---")
-
-# ---------------- TABELA DE CLIENTES ----------------
+col1.metric("Clientes", total)
+col2.metric("Clientes Retornaram", retornaram)
+col3.metric("Taxa de Retorno", f"{dividir_seguro(retornaram * 100, total):.1f}%")
+col4.metric("Compras Totais", len(df))
 
 st.markdown("### 📋 Perfil dos Clientes")
-
 df_clientes = df_clientes.sort_values("total_vendas", ascending=False)
-df_clientes["total_vendas_fmt"] = df_clientes["total_vendas"].map(formatar_moeda_brasileira)
-df_clientes["ticket_medio_fmt"] = df_clientes["ticket_medio"].map(formatar_moeda_brasileira)
-
-df_display = df_clientes.rename(columns={
-    "Cliente": "Cliente",
-    "total_vendas_fmt": "Total Vendido",
-    "num_compras": "Compras",
-    "ticket_medio_fmt": "Ticket Médio",
-    "itens_totais": "Itens Totais"
-})[
-    ["Cliente", "Total Vendido", "Compras", "Ticket Médio", "Itens Totais"]
-]
-
-st.dataframe(df_display, use_container_width=True)
-
-# ---------------- GRÁFICO TOP CLIENTES ----------------
+exibicao = df_clientes.copy()
+exibicao["total_vendas"] = exibicao["total_vendas"].map(formatar_moeda_brasileira)
+exibicao["ticket_medio"] = exibicao["ticket_medio"].map(formatar_moeda_brasileira)
+mostrar_paginado(
+    exibicao.rename(
+        columns={
+            "total_vendas": "Total Vendido",
+            "num_compras": "Compras",
+            "ticket_medio": "Ticket Médio",
+            "itens_totais": "Linhas de Produtos",
+            "unidades_totais": "Unidades",
+            "num_retornos": "Retornos",
+        }
+    ),
+    "clientes",
+)
 
 st.markdown("### 📊 Top Clientes por Valor Vendido")
-
 top_n = st.slider("Top N Clientes", min_value=5, max_value=50, value=10, step=1)
-top_df = df_clientes.head(top_n)
-
 chart = (
-    alt.Chart(top_df)
+    alt.Chart(df_clientes.head(top_n))
     .mark_bar()
     .encode(
         x=alt.X("total_vendas:Q", title="Total Vendido"),
         y=alt.Y("Cliente:N", sort="-x", title="Cliente"),
         color=alt.Color("total_vendas:Q", scale=alt.Scale(scheme="blues"), legend=None),
         tooltip=[
-            alt.Tooltip("Cliente", title="Cliente"),
+            alt.Tooltip("Cliente:N", title="Cliente"),
             alt.Tooltip("num_compras:Q", title="Compras"),
             alt.Tooltip("num_retornos:Q", title="Retornos"),
-            alt.Tooltip("ticket_medio:Q", title="Ticket Médio", format=",.2f")
-        ]
+            alt.Tooltip("ticket_medio:Q", title="Ticket Médio", format=",.2f"),
+        ],
     )
     .properties(height=400, title=f"Top {top_n} Clientes por Valor Vendido")
 )
-
 st.altair_chart(chart, use_container_width=True)

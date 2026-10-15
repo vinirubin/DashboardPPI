@@ -1,89 +1,93 @@
-import streamlit as st
-import traceback
-import pandas as pd
-from typing import Optional, Callable, Tuple
-from utils.caminho import (
-    caminho_valido,
-)
-from utils.constantes import (
-    CAMINHO_PADRAO_VENDAS,
-    CAMINHO_PADRAO_CADASTRO,
-)
+"""Ciclo de vida dos dados por sessão e apresentação dos erros esperados."""
 
-def inicializar_app():
-    if "inicializado" not in st.session_state:
-        st.session_state["inicializado"] = True
-        st.session_state["caminho_vendas"] = CAMINHO_PADRAO_VENDAS
-        st.session_state["caminho_cadastro"] = CAMINHO_PADRAO_CADASTRO
-        print("⚙️ App inicializado.")
+from collections.abc import Callable
+
+import pandas as pd
+import streamlit as st
+
+from utils.caminho import caminho_valido
+from utils.constantes import CAMINHO_PADRAO_CADASTRO, CAMINHO_PADRAO_VENDAS
+from utils.dados import ErroDados, FonteCSV, ler_cadastro, ler_vendas
+
+
+def inicializar_app() -> None:
+    st.session_state.setdefault("caminho_vendas", CAMINHO_PADRAO_VENDAS)
+    st.session_state.setdefault("caminho_cadastro", CAMINHO_PADRAO_CADASTRO)
+    st.session_state["inicializado"] = True
+
+
+def invalidar_derivados() -> None:
+    st.session_state.pop("df_vendas_agrupado", None)
+    for chave in list(st.session_state):
+        if chave.startswith("pagina_"):
+            del st.session_state[chave]
+
 
 def carregar_arquivo_na_sessao(
     nome_chave: str,
-    caminho: Optional[str],
-    func_carregamento: Callable[[str], object]
+    caminho: FonteCSV | None,
+    func_carregamento: Callable[[FonteCSV], pd.DataFrame],
+    *,
+    forcar: bool = False,
 ) -> bool:
-    if nome_chave in st.session_state:
+    if not forcar and df_em_cache(nome_chave):
         return True
-
-    if not caminho_valido(caminho):
-        st.error(f"❌ Caminho inválido para '{nome_chave}'.")
+    if caminho is None or (isinstance(caminho, str) and not caminho.strip()):
+        st.error("Configure os arquivos na página 'Carregar Arquivos'.")
         return False
-
     try:
         df = func_carregamento(caminho)
-        st.session_state[nome_chave] = df
-        return True
-    except Exception as e:
-        st.error(f"❌ Erro ao carregar '{nome_chave}': {e}")
-        traceback.print_exc()
-        st.session_state.pop(nome_chave, None)
+        if not isinstance(df, pd.DataFrame) or df.empty:
+            raise ErroDados("O carregador não retornou uma tabela com registros.")
+    except ErroDados as exc:
+        st.error(str(exc))
         return False
+    except (OSError, UnicodeError, pd.errors.ParserError):
+        st.error("Não foi possível ler o CSV. Verifique acesso, UTF-8 e separador ';'.")
+        return False
+    st.session_state[nome_chave] = df
+    return True
+
 
 def df_em_cache(nome_df: str) -> bool:
-    """
-    Verifica se o DataFrame com o nome `nome_df` está presente e válido no session_state.
-
-    Parâmetros:
-    - nome_df: Nome da chave esperada no session_state
-
-    Retorna:
-    - True se o DataFrame está carregado e não está vazio
-    - False caso contrário
-    """
     df = st.session_state.get(nome_df)
     return isinstance(df, pd.DataFrame) and not df.empty
 
+
 def salvar_caminhos(
     caminho_vendas: str = CAMINHO_PADRAO_VENDAS,
-    caminho_cadastro: str = CAMINHO_PADRAO_CADASTRO
+    caminho_cadastro: str = CAMINHO_PADRAO_CADASTRO,
 ) -> bool:
-    if not caminho_valido(caminho_vendas):
-        st.error(f"❌ Arquivo de vendas não encontrado: {caminho_vendas}")
+    from utils.processamento import adicionar_periodos, agrupar_vendas_por_controle
+
+    if not caminho_valido(caminho_vendas) or not caminho_valido(caminho_cadastro):
+        st.error("Arquivo não encontrado. Verifique os dois caminhos informados.")
         return False
-
-    if not caminho_valido(caminho_cadastro):
-        st.error(f"❌ Arquivo de cadastro não encontrado: {caminho_cadastro}")
+    try:
+        vendas = adicionar_periodos(ler_vendas(caminho_vendas))
+        cadastro = ler_cadastro(caminho_cadastro)
+        agrupado = agrupar_vendas_por_controle(vendas)
+    except ErroDados as exc:
+        st.error(str(exc))
         return False
-
-    st.cache_data.clear()
-    st.cache_resource.clear()
-
-    st.session_state["caminho_vendas"] = caminho_vendas
-    st.session_state["caminho_cadastro"] = caminho_cadastro
-
+    # Publicação somente após ambos os CSVs e suas relações serem validados.
+    invalidar_derivados()
+    st.session_state.update(
+        caminho_vendas=caminho_vendas,
+        caminho_cadastro=caminho_cadastro,
+        df_vendas=vendas,
+        df_cadastro=cadastro,
+        df_vendas_agrupado=agrupado,
+    )
     return True
 
-def validar_df(nome: str, carregador: callable) -> pd.DataFrame:
-    """
-    Valida e retorna um DataFrame do session_state.
-    Se não estiver carregado, tenta carregar com a função fornecida.
-    """
-    if nome not in st.session_state:
+
+def validar_df(nome: str, carregador: Callable[[], object]) -> pd.DataFrame:
+    if not df_em_cache(nome):
         carregador()
-
-    df: Optional[pd.DataFrame] = st.session_state.get(nome)
+    df = st.session_state.get(nome)
     if not isinstance(df, pd.DataFrame) or df.empty:
-        st.error(f"❌ O DataFrame '{nome}' não está disponível ou está vazio.")
+        st.error(f"A tabela '{nome}' não está disponível ou está vazia.")
         st.stop()
-
+    # Contrato histórico: consumidor pode formatar sem alterar a sessão.
     return df.copy()

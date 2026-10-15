@@ -1,0 +1,106 @@
+{
+  "dados": "100% sintéticos, independentes do conjunto comercial",
+  "conteudo": "6 capturas JPG; 5 gráficos e 1 diagrama em PNG/SVG; galeria; guia",
+  "arquivos": [
+    {
+      "caminho": "capturas/01_indicadores_sinteticos.jpg",
+      "bytes": 78478,
+      "sha256": "ba832a880e84e8d1aef312d8649a0db962ece1e891d7af40e013fccba7006951"
+    },
+    {
+      "caminho": "capturas/02_detalhamento_mensal_sintetico.jpg",
+      "bytes": 79906,
+      "sha256": "2ff4d8974f841494c9c2ca68ea36ccf0db21f12afffc99f8b25bb7ac48cb1d4a"
+    },
+    {
+      "caminho": "capturas/03_produtos_sinteticos.jpg",
+      "bytes": 77234,
+      "sha256": "a8d1a3905b0bda02ba91711df6d70afb9b94afcba2bddb824c8f50d5dcb2a9f9"
+    },
+    {
+      "caminho": "capturas/04_grafico_produtos_sinteticos.jpg",
+      "bytes": 65606,
+      "sha256": "99fb61cf6e1c68d2d5eee8ccfc7981621a2b89809eaa60d613b7d418eccbd712"
+    },
+    {
+      "caminho": "capturas/05_clientes_sinteticos.jpg",
+      "bytes": 74197,
+      "sha256": "20c3e09742d98c67a824a33c49f5e413fa14ae681d93c2c3fdfce11086905673"
+    },
+    {
+      "caminho": "capturas/06_regioes_sinteticas.jpg",
+      "bytes": 65505,
+      "sha256": "0acdce476203bc40851e7106289e2fc46d1f51f86605b949bc871067b0621ac2"
+    },
+    {
+      "caminho": "graficos/01_evolucao_mensal.png",
+      "bytes": 128361,
+      "sha256": "867a06b23bad36fc53e23795f2ccf76d2e2ee6ca7d403e620b472fdef75e6991"
+    },
+    {
+      "caminho": "graficos/02_top_produtos.png",
+      "bytes": 110372,
+      "sha256": "0f74c3c6a1af4bbf8c098b597af0203480df1b32e41eb607c1f8383bb085fbf7"
+    },
+    {
+      "caminho": "graficos/03_recorrencia_clientes.png",
+      "bytes": 113942,
+      "sha256": "32ef250039707e4b71ea980caaf7f2522dabeceda9f4a0d44338ff01c9679268"
+    },
+    {
+      "caminho": "graficos/04_vendas_regiao.png",
+      "bytes": 84840,
+      "sha256": "b8c60604802680894174741a0f50ad1ea56e1e10bcabd3ff2de3f1b6405f256b"
+    },
+    {
+      "caminho": "graficos/05_vendas_dia_semana.png",
+      "bytes": 97134,
+      "sha256": "e1d2e411552f0450e9239694a2140b6b0401a990cc1db90b4a6f896749a1f7f0"
+    },
+    {
+      "caminho": "graficos/06_arquitetura_projeto.png",
+      "bytes": 108477,
+      "sha256": "b7e2391b0bd11cde57b7b75cbf750717ed4734067b8984cbef6a049fe397ab0e"
+    },
+    {
+      "caminho": "graficos/01_evolucao_mensal.svg",
+      "bytes": 15313,
+      "sha256": "6032b2cab9d091e8ab5d078f7df002f7505ed8838c58768a1053b6f49a205d3e"
+    },
+    {
+      "caminho": "graficos/02_top_produtos.svg",
+      "bytes": 11619,
+      "sha256": "d60e2bea4edf7e37a553e59f4ef2cca5446685d426cb25baf7d7f45f0a7a826d"
+    },
+    {
+      "caminho": "graficos/03_recorrencia_clientes.svg",
+      "bytes": 6548,
+      "sha256": "1533a4f17c7e385c5928c25f93702374b5c5efbcfcb96cb77fa34f4602e6bb9f"
+    },
+    {
+      "caminho": "graficos/04_vendas_regiao.svg",
+      "bytes": 8858,
+      "sha256": "928899a6035d997bc0f0af994ef3772b1342b3ff3cee69ce2762ae3b0e2e599c"
+    },
+    {
+      "caminho": "graficos/05_vendas_dia_semana.svg",
+      "bytes": 11943,
+      "sha256": "e1f4b7fea913bb15ba6b50e92234782b793f600fef7c03bdda57a0fd8e6c9ae1"
+    },
+    {
+      "caminho": "graficos/06_arquitetura_projeto.svg",
+      "bytes": 12676,
+      "sha256": "1afb454e7323a510fc0fd72c9f8c2799649b2e103601e7ac7e77875264ab3da6"
+    },
+    {
+      "caminho": "galeria.html",
+      "bytes": 7025,
+      "sha256": "5c9d85b18325f9b0ef94d0583477de3968fa0daa32f8d404f18eadaf2e86af22"
+    },
+    {
+      "caminho": "GUIA_DE_USO.md",
+      "bytes": 2498,
+      "sha256": "7df8b6833feb7b949a6593fae8bff61bb80ea6e730716094430f4bfd53e5b00b"
+    }
+  ]
+}

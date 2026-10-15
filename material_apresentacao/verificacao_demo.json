@@ -1,0 +1,13 @@
+{
+  "status": "aprovado",
+  "dados_sinteticos": true,
+  "geracao_deterministica": true,
+  "leitura_csv_bloqueada_durante_verificacao": true,
+  "paginas_verificadas": [
+    "2_📊_Indicadores_Gerais.py",
+    "3_📦_Produtos_Vendidos.py",
+    "4_📉_Produtos_Nao_Vendidos.py",
+    "5_👥_Clientes.py",
+    "6_📊_Vendas.py"
+  ]
+}
